@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Greenden</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+        .fade-up { animation: fadeUp .8s ease-out both; }
+        .delay-1 { animation-delay: .15s; } .delay-2 { animation-delay: .3s; }
+    </style>
+</head>
+
+<body>
+    <!-- Responsive Navbar -->
+    <header class="sticky top-0 z-50">
+        <nav class="bg-green-100 p-3 flex items-center justify-between shadow-xl">
+            <h1 class="text-2xl"><a href="index.html">Greenden</a></h1>
+
+            <svg id="menuBtn" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                class="w-6 h-6 md:hidden cursor-pointer">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+
+            <ul class="hidden md:flex gap-5 text-gray-600">
+                <li>
+                    <a class="hover:underline hover:text-black transition duration-300" href="index.html">Home</a>
+                </li>
+                <li>
+                    <a class="hover:underline hover:text-black transition duration-300" href="index.html#products">Products</a>
+                </li>
+                <li>
+                    <a class="underline text-black" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <ul id="mobileMenu" class="hidden md:hidden bg-green-100 text-gray-600 p-3 shadow-xl">
+            <li class="py-2"><a class="hover:text-black" href="index.html">Home</a></li>
+            <li class="py-2"><a class="hover:text-black" href="index.html#products">Products</a></li>
+            <li class="py-2"><a class="text-black underline" href="contact.html">Contact</a></li>
+        </ul>
+    </header>
+
+    <section class="bg-white">
+        <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 fade-up">Contact Us</h2>
+            <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 sm:text-xl fade-up delay-1">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
+            <form action="#" class="space-y-8 fade-up delay-2">
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your email</label>
+                    <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 block w-full p-2.5 transition duration-300" placeholder="name@flowbite.com" required>
+                </div>
+                <div>
+                    <label for="subject" class="block mb-2 text-sm font-medium text-gray-900">Subject</label>
+                    <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition duration-300" placeholder="Let us know how we can help you" required>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Your message</label>
+                    <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition duration-300" placeholder="Leave a comment..."></textarea>
+                </div>
+                <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-green-700 sm:w-fit transition duration-300 transform hover:scale-105 hover:bg-green-900 focus:outline-none focus:ring-4 focus:ring-green-300">Send message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section class="bg-green-100 p-10 flex flex-col gap-5">
+        <h1 class="text-4xl font-bold">Greenden</h1>
+        <p>The Standard chunk of Lorem ipsum used since the 1500s is reprodused below for those interest</p>
+        <p>@ 2021 Greenden.com</p>
+    </section>
+
+    <script>
+        document.getElementById('menuBtn').addEventListener('click', function () {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

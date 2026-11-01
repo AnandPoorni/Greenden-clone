@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenden</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script>document.documentElement.classList.add('js');</script>
+    <style>
+        /* Page-load animation */
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+        .fade-up { animation: fadeUp .8s ease-out both; }
+        .delay-1 { animation-delay: .15s; } .delay-2 { animation-delay: .3s; } .delay-3 { animation-delay: .45s; }
+        /* Scroll-reveal (only hides when JS is running) */
+        .js .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+        .js .reveal.show { opacity: 1; transform: none; }
+        /* Offset anchor jumps so the sticky navbar doesn't cover headings */
+        section[id] { scroll-margin-top: 80px; }
+    </style>
+</head>
+
+<body>
+
+    <!-- Responsive Navbar -->
+    <header class="sticky top-0 z-50">
+        <nav class="bg-green-100 p-3 flex items-center justify-between shadow-xl">
+            <h1 class="text-2xl"><a href="index.html">Greenden</a></h1>
+
+            <svg id="menuBtn" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                class="w-6 h-6 md:hidden cursor-pointer">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+
+            <ul class="hidden md:flex gap-5 text-gray-600">
+                <li>
+                    <a class="hover:underline hover:text-black transition duration-300" href="index.html">Home</a>
+                </li>
+                <li>
+                    <a class="hover:underline hover:text-black transition duration-300" href="index.html#products">Products</a>
+                </li>
+                <li>
+                    <a class="hover:underline hover:text-black transition duration-300" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Mobile menu (opens with the hamburger icon) -->
+        <ul id="mobileMenu" class="hidden md:hidden bg-green-100 text-gray-600 p-3 shadow-xl">
+            <li class="py-2"><a class="hover:text-black" href="index.html">Home</a></li>
+            <li class="py-2"><a class="hover:text-black" href="index.html#products">Products</a></li>
+            <li class="py-2"><a class="hover:text-black" href="contact.html">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- Header Section -->
+    <section class="bg-green-100 p-4 md:p-10 flex justify-center">
+        <div>
+            <p class="mb-4 fade-up">We offer you a wide range of Artificial and Natural Flowers</p>
+            <h2 class="font-bold text-3xl md:text-5xl mb-5 fade-up delay-1">Plants for your Interior</h2>
+            <div class="fade-up delay-2">
+               <a href="products.html" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-900">Shop Now</a>
+                <button class="border border-black rounded p-2 transition duration-300 transform hover:scale-105 hover:bg-black hover:text-white">Watch Video</button>
+            </div>
+            <p class="mt-5 fade-up delay-3">160+ Plant Species | 100+ Clients</p>
+        </div>
+
+        <div class="hidden md:block p-5 fade-up delay-2">
+            <img src="./images/plant2 grow.jpg" alt="Header Image" class="w-80 rounded shadow-xl transition duration-500 transform hover:scale-105">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="text-center reveal">
+        <h1 class="text-3xl font-bold mt-5">About Us</h1>
+        <p>This site is for those who admire the beauty and harmony of nature</p>
+        <div class="md:flex">
+            <div class="border border-black p-2 m-6 transition duration-300 transform hover:-translate-y-2 hover:shadow-xl">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-20 inline">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                </svg>
+                <h2 class="text-xl font-medium">Large Assortment</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, doloribus magnam distinctio,
+                    repellat vel minima id aut perspiciatis repudiandae, fugit nostrum. Quam, corporis iusto! Sed ipsam
+                    aut illum quam libero.</p>
+            </div>
+            <div class="border border-black p-2 m-6 transition duration-300 transform hover:-translate-y-2 hover:shadow-xl">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-20 inline">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3-3 3" />
+                </svg>
+
+                <h2 class="text-xl font-medium">Large Assortment</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, doloribus magnam distinctio,
+                    repellat vel minima id aut perspiciatis repudiandae, fugit nostrum. Quam, corporis iusto! Sed ipsam
+                    aut illum quam libero.</p>
+            </div>
+            <div class="border border-black p-2 m-6 transition duration-300 transform hover:-translate-y-2 hover:shadow-xl">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-20 inline">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0 6-6m-3 18c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 0 1 4.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 0 0-.38 1.21 12.035 12.035 0 0 0 7.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 0 1 1.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 0 1-2.25 2.25h-2.25Z" />
+                </svg>
+
+                <h2 class="text-xl font-medium">24/7 Support</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, doloribus magnam distinctio,
+                    repellat vel minima id aut perspiciatis repudiandae, fugit nostrum. Quam, corporis iusto! Sed ipsam
+                    aut illum quam libero.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Seller -->
+    <section id="products" class="p-4 text-center reveal">
+        <h1 class="font-bold mt-5 text-3xl">Best Seller</h1>
+        <div class="grid grid-cols-2 md:grid-cols-4 mt-5 gap-5">
+            <div>
+                <img src="./images/salesimg_2.jpg" class="inline transition duration-300 hover:shadow-xl transform hover:-translate-y-2" alt="Rose plant">
+                <h1>Rose Plant</h1>
+                <p>$20</p>
+            </div>
+            <div>
+                <img src="./images/salesimg_1.jpg" class="inline transition duration-300 hover:shadow-xl transform hover:-translate-y-2" alt="Croton plant">
+                <h1>Croton Plant</h1>
+                <p>$20</p>
+            </div>
+            <div>
+                <img src="./images/salesimg_3.jpg" class="inline transition duration-300 hover:shadow-xl transform hover:-translate-y-2" alt="Snake plant">
+                <h1>Snake Plant</h1>
+                <p>$20</p>
+            </div>
+            <div>
+                <img src="./images/salesimg_4.jpg" class="inline transition duration-300 hover:shadow-xl transform hover:-translate-y-2" alt="Spider plant">
+                <h1>Spider Plant</h1>
+                <p>$20</p>
+            </div>
+                   <div>
+                <img src="./images/salesimg_5.jpg" class="inline transition duration-300 hover:shadow-xl transform hover:-translate-y-2" alt="Rose plant">
+                <h1>Sun Flower Plant</h1>
+                <p>$20</p>
+            </div>
+            <div>
+                <img src="./images/salesimg_6.jpg" class="inline transition duration-300 hover:shadow-xl transform hover:-translate-y-2" alt="Croton plant">
+                <h1>Tulip Plant</h1>
+                <p>$20</p>
+            </div>
+            <div>
+                <img src="./images/salesimg_7.jpg" class="inline transition duration-300 hover:shadow-xl transform hover:-translate-y-2" alt="Snake plant">
+                <h1>Oak tree Plant</h1>
+                <p>$20</p>
+            </div>
+            <div>
+                <img src="./images/salesimg_8.jpg" class="inline transition duration-300 hover:shadow-xl transform hover:-translate-y-2" alt="Spider plant">
+                <h1> Plant</h1>
+                <p>$20</p>
+            </div>
+          <div>
+                <img src="./images/salesimg_9.jpg" class="inline transition duration-300 hover:shadow-xl transform hover:-translate-y-2" alt="Rose plant">
+                <h1>palm Tree Plant</h1>
+                <p>$20</p>
+            </div>
+            <div>
+                <img src="./images/salesimg_10.jpg" class="inline transition duration-300 hover:shadow-xl transform hover:-translate-y-2" alt="Croton plant">
+                <h1>Lily Plant</h1>
+                <p>$20</p>
+            </div>
+            <div>
+                <img src="./images/salesimg_11.jpg" class="inline transition duration-300 hover:shadow-xl transform hover:-translate-y-2" alt="Snake plant">
+                <h1>Redwood tree Plant</h1>
+                <p>$20</p>
+            </div>
+            <div>
+                <img src="./images/salesimg_12.jpg" class="inline transition duration-300 hover:shadow-xl transform hover:-translate-y-2" alt="Spider plant">
+                <h1>Daisy Flower Plant</h1>
+                <p>$20</p>
+            </div>
+          <div>
+                
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section id="reviews" class="reveal">
+        <h1 class="text-3xl font-bold mt-5 text-center">Customer Reviews</h1>
+        <div class="flex flex-col gap-5 m-5">
+            <div class="bg-green-900 text-white p-5 container mx-auto transition duration-300 transform hover:scale-105 hover:shadow-xl">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla alias earum voluptate delectus minima in facere architecto accusamus assumenda ipsam corrupti, id cumque et perferendis dolorum veniam aliquid excepturi adipisci?</p>
+                <p class="font-bold text-yellow-300">James Warder</p>
+            </div>
+            <div class="bg-green-900 text-white p-5 container mx-auto transition duration-300 transform hover:scale-105 hover:shadow-xl">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla alias earum voluptate delectus minima in facere architecto accusamus assumenda ipsam corrupti, id cumque et perferendis dolorum veniam aliquid excepturi adipisci?</p>
+                <p class="font-bold text-yellow-300">James Warder</p>
+            </div>
+            <div class="bg-green-900 text-white p-5 container mx-auto transition duration-300 transform hover:scale-105 hover:shadow-xl">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla alias earum voluptate delectus minima in facere architecto accusamus assumenda ipsam corrupti, id cumque et perferendis dolorum veniam aliquid excepturi adipisci?</p>
+                <p class="font-bold text-yellow-300">James Warder</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Letter -->
+    <section id="newsletter" class="text-center reveal">
+        <h1 class="text-3xl font-bold text-center">Join our News Letter</h1>
+        <p>Sigup for our email newspaper to get exculsive discounts, updates, and more</p>
+        <input type="email" placeholder="Enter your email" class="border border-black p-2 m-3 focus:outline-none focus:ring-2 focus:ring-green-500" style="width: 80%;">
+        <br>
+        <button class="bg-black text-white p-3 m-1 underline transition duration-300 transform hover:scale-105 hover:bg-green-900">Subscribe</button>
+    </section>
+
+    <!-- Footer -->
+    <section class="bg-green-100 p-10 flex flex-col gap-5 mt-10">
+        <h1 class="text-4xl font-bold">Greenden</h1>
+        <p>The Standard chunk of Lorem ipsum used since the 1500s is reprodused below for those interest</p>
+        <p>@ 2021 Greenden.com</p>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuBtn').addEventListener('click', function () {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+        // Scroll-reveal animation
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    </script>
+</body>
+
+</html>
